@@ -6,14 +6,14 @@
 #    By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/06/16 14:17:14 by nkeyani-         ###   ########.fr        #
+#    Updated: 2023/06/16 14:21:30 by nkeyani-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CFLAGS = -Wall -Werror -Wextra -L./$(LIBFT) include/libft/bin/libft.a -I./$(LIBFT)
-LIBFT= libft/
-OBJECTS_SRV = main.c
+LIBFT= include/libft/
+OBJECTS_SRV = main.c ps_push.c ps_rev_rotate.c ps_rotate.c ps_swaps.c
 COLOR_RESET = \033[0m
 COLOR = \033[32m
 KAOMOJI_SUCCESS = (づ ᴗ _ᴗ)づ♡
