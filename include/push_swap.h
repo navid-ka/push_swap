@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/06 16:39:42 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/06 18:23:56 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
-typedef struct s_list
+typedef struct s_stack
 {
-	int	*sa;
-	int	*sb;
-}	t_list;
+	int	*arr;
+	int	len;
+}	t_stack;
 
-void	pa(t_list *l);
-void	pb(t_list *l);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
 void	swap(int *a, int *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/06 16:48:36 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/06 20:15:09 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 int main()
 {
+
+    t_stack arr[] = {5,3,2};
+    t_stack stack = stack->arr;
+    pb(stack, 0);
     return 0;
 }
