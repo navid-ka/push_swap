@@ -6,41 +6,36 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 01:15:22 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/07 01:17:53 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 00:15:38 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sa(int *sa)
+void	swap(int *a, int *b)
 {
 	int	middleman;
 
-	middleman = sa[0];
-	sa[0] = sa[1];
-	sa[1] = middleman;
+	middleman = *a;
+	*a = *b;
+	*b = middleman;
+}
+
+void	sa(t_stack *stack_a)
+{
+	swap(&stack_a->arr[0], &stack_a->arr[1]);
 	write(1, "sa\n", 3);
 }
 
-void	sb(int *sb)
+void	sb(t_stack *stack_b)
 {
-	int	middleman;
-
-	middleman = sb[0];
-	sb[0] = sb[1];
-	sb[1] = middleman;
+	swap(&stack_b->arr[0], &stack_b->arr[1]);
 	write(1, "sb\n", 3);
 }
 
-void	ss(int *sa, int *sb)
+void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-	int	middleman;
-
-	middleman = sa[0];
-	sa[0] = sa[1];
-	sa[1] = middleman;
-	middleman = sb[0];
-	sb[0] = sb[1];
-	sb[1] = middleman;
+	swap(&stack_a->arr[0], &stack_a->arr[1]);
+	swap(&stack_b->arr[0], &stack_b->arr[1]);
 	write(1, "ss\n", 3);
 }

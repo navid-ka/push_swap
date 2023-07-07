@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/06 22:15:09 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 00:17:28 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ int main()
 
     pb(&stack_a, &stack_b);
     pb(&stack_a, &stack_b);
+    sb(&stack_b);
+    printArrays(&stack_a, &stack_b);
+    sb(&stack_b);
     printArrays(&stack_a, &stack_b);
     pa(&stack_a, &stack_b);
     printArrays(&stack_a, &stack_b);

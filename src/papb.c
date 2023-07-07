@@ -6,20 +6,11 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:41:30 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/06 22:10:35 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 00:10:09 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	swap(int *a, int *b)
-{
-	int	middleman;
-
-	middleman = *a;
-	*a = *b;
-	*b = middleman;
-}
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
