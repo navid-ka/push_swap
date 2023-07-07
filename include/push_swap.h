@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/06 22:01:33 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/07 01:17:49 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ typedef struct s_stack
 	int	len;
 }	t_stack;
 
+void	sa(int *sa);
+void	sb(int *sb);
+void	ss(int *sa, int *sb);
 void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	swap(int *a, int *b);
