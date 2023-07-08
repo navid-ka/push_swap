@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/08 10:55:04 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 11:17:08 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 
-# define NANMSG = "Error invalid input NaN"
+# define ERRORMSG = "Error"
 
 typedef struct s_stack
 {
@@ -28,7 +28,7 @@ typedef struct s_stack
 enum
 {
 	OK,
-	ERROR_NAN
+	ERROR,
 };
 
 void	sa(t_stack *stack_a);
@@ -38,5 +38,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	swap(int *a, int *b);
 int		psatoi(char *str);
+void	is_dup(int *arg);
+t_stack	*parse_args(char **args);
 
 #endif
