@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 00:17:28 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 10:23:17 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void printArrays(t_stack *stack_a, t_stack *stack_b)
     printf("\n");
 }
 
-int main()
+int main(int argc, char **argv)
 {
     t_stack stack_a;
     t_stack stack_b;
