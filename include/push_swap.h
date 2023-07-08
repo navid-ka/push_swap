@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/08 11:40:19 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 14:33:24 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_stack
 {
-	int	*arr;
+	int	*data;
 	int	len;
 }	t_stack;
 
@@ -36,7 +36,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	swap(int *a, int *b);
 int		psatoi(char *str);
-int		is_dup(int *arg);
-t_stack	*parse_args(char **args);
+int		is_dup(char **arg);
+int		parse_args(char **args);
 
 #endif

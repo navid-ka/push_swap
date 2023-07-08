@@ -6,15 +6,16 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 12:09:13 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 14:34:11 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	is_ordered(char *arg);
+/*
+//int	is_ordered(char *arg);
 
-int	is_num(char *arg)
+int	is_num(char **arg)
 {
 	if (arg[0] == '\0')
 		return (ERROR);
@@ -28,7 +29,7 @@ int	is_num(char *arg)
 	return (OK);
 }
 
-int	is_dup(char *arg)
+int	is_dup(char **arg)
 {
 	int	i;
 	int	j;
@@ -53,7 +54,8 @@ int	parse_args(char **args)
 		notok();
 	if (is_num(args) == ERROR)
 		notok();
-	if (is_ordered(args) == ERROR)
-		notok();
+	//if (is_ordered(args) == ERROR)
+		//notok();
 	return (OK);
 }
+*/
