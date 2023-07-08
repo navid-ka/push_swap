@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 12:01:24 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 12:11:16 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	psatoi(char *str)
 		}
 		str++;
 		if (!(*str >= '0' && *str <= '9'))
-			return (ERROR);
+			return (notok());
 	}
 	while (*str >= '0' && *str <= '9')
 	{

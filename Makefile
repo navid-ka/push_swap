@@ -6,7 +6,7 @@
 #    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/07 22:35:42 by bifrost          ###   ########.fr        #
+#    Updated: 2023/07/08 11:30:02 by bifrost          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Werror -Wextra
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
-SRC = src/push_swap.c src/papb.c src/swap_stack.c
+SRC = src/push_swap.c src/papb.c src/swap_stack.c src/utils.c
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 COLOR_RESET = $(shell tput sgr0)
 COLOR = $(shell tput setaf 2)
