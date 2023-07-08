@@ -6,48 +6,15 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 11:28:02 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 12:01:24 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_stack	*parse_args(char **args)
+void	notok(void)
 {
-	char	*arr;
-	t_stack	*clean;
-
-	clean = malloc(sizeof(t_stack));
-	arr = is_dup(psatoi(args));
-	if (arr == OK)
-		clean->arr = arr;
-	if (arr == ERROR)
-	{
-		// TODO: Perform necessary cleanup before returning.
-		free(clean);
-		write(STDERR_FILENO, "Error\n", 6);
-		return (NULL);
-	}
-	return (clean);
-}
-
-int	is_dup(int *arg)
-{
-	int	i;
-	int	j;
-
-	j = 0;
-	i = 0;
-	while (arg[i])
-	{
-		if (arg[i] == arg[j])
-		{
-			j++;
-			return (ERROR);
-		}
-		i++;
-	}
-	return (OK);
+	write(STDERR_FILENO, "Error\n", 6);
 }
 
 int	psatoi(char *str)

@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 11:04:32 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 11:38:58 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,28 @@ void printArrays(t_stack *stack_a, t_stack *stack_b)
 
 int main(int argc, char **argv)
 {
-	t_stack stack_a;
-	t_stack stack_b;
-	int arr[] = {5, 3, 2};
-	int size = sizeof(arr) / sizeof(arr[0]);
+    (void)argc; // Silence unused parameter warning
+    t_stack stack_a;
+    t_stack stack_b;
+    t_stack *arr = parse_args(argv);
+    int size = arr->len;
 
-	stack_a.arr = arr;
-	stack_a.len = size;
-	stack_b.arr = malloc(size * sizeof(int));
-	stack_b.len = 0;
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	sb(&stack_b);
-	printArrays(&stack_a, &stack_b);
-	sb(&stack_b);
-	printArrays(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
-	printArrays(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	printArrays(&stack_a, &stack_b);
-	free(stack_b.arr);
-	return (0);
+    stack_a.arr = arr->arr;
+    stack_a.len = size;
+    stack_b.arr = malloc(size * sizeof(int));
+    stack_b.len = 0;
+    pb(&stack_a, &stack_b);
+    pb(&stack_a, &stack_b);
+    sb(&stack_b);
+    printArrays(&stack_a, &stack_b);
+    sb(&stack_b);
+    printArrays(&stack_a, &stack_b);
+    pa(&stack_a, &stack_b);
+    printArrays(&stack_a, &stack_b);
+    pb(&stack_a, &stack_b);
+    printArrays(&stack_a, &stack_b);
+    free(stack_b.arr);
+    free(arr->arr); // Free the array allocated in parse_args
+    free(arr); // Free the parsed arguments structure
+    return 0;
 }
