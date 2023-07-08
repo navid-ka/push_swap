@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/08 11:17:08 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 11:24:27 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	swap(int *a, int *b);
 int		psatoi(char *str);
-void	is_dup(int *arg);
+int		is_dup(int *arg);
 t_stack	*parse_args(char **args);
 
 #endif

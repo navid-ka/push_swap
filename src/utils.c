@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 11:20:50 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 11:28:02 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack	*parse_args(char **args)
 {
 	char	*arr;
-	t_stack	clean;
+	t_stack	*clean;
 
 	clean = malloc(sizeof(t_stack));
 	arr = is_dup(psatoi(args));
@@ -25,13 +25,13 @@ t_stack	*parse_args(char **args)
 	{
 		// TODO: Perform necessary cleanup before returning.
 		free(clean);
-		write(stderr, "Error\n", 6);
+		write(STDERR_FILENO, "Error\n", 6);
 		return (NULL);
 	}
 	return (clean);
 }
 
-void	is_dup(int *arg)
+int	is_dup(int *arg)
 {
 	int	i;
 	int	j;
@@ -60,7 +60,7 @@ int	psatoi(char *str)
 	while ((*str == ' ') || (*str == '\t') || (*str == '\n')
 		|| (*str == '\v') || (*str == '\f') || (*str == '\r'))
 		str++;
-	while (*str == '-' && *str == '+')
+	while (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 		{
@@ -71,9 +71,9 @@ int	psatoi(char *str)
 		if (!(*str >= '0' && *str <= '9'))
 			return (ERROR);
 	}
-	while (*str >= '0' && *str == '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		nb = nb * 10 + (*str - 48);
+		nb = nb * 10 + (*str - '0');
 		str++;
 	}
 	return (nb * sign);
