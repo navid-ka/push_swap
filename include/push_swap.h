@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/08 00:15:46 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/08 10:38:22 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,19 @@
 # include <unistd.h>
 # include <stdio.h>
 
+# define NANMSG = "Error invalid input NaN"
+
 typedef struct s_stack
 {
 	int	*arr;
 	int	len;
 }	t_stack;
+
+enum
+{
+	OK,
+	ERROR_NAN
+};
 
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
