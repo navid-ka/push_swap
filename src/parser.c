@@ -3,20 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 14:34:11 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/10 19:02:23 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/*
-//int	is_ordered(char *arg);
+
+int	is_ordered(char **arg)
+{
+	int i = 0;
+	int j = 0;
+	int arr;
+
+	arr = psatoi(*arg);
+	while (arr[i])
+	{
+		if (arr[i] < arr[i + 1])
+		{
+			i++;
+		}
+		else
+			return (ERROR);
+	}
+	return (OK);
+}
 
 int	is_num(char **arg)
 {
+	int i = 0;
 	if (arg[0] == '\0')
 		return (ERROR);
 	i = 0;
@@ -51,11 +69,19 @@ int	is_dup(char **arg)
 int	parse_args(char **args)
 {
 	if (is_dup(args) == ERROR)
-		notok();
+	{
+		write(STDERR_FILENO, "Error\n", 6);
+		return ERROR;
+	}
 	if (is_num(args) == ERROR)
-		notok();
+	{
+		write(STDERR_FILENO, "Error\n", 6);
+		return ERROR;
+	}
 	//if (is_ordered(args) == ERROR)
-		//notok();
+	//{
+		//write(STDERR_FILENO, "Error\n", 6);
+		//return ERROR;
+	//}
 	return (OK);
 }
-*/
