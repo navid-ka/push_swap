@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/11 18:47:43 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:54:47 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ int	parse_args(int ac, char **args)
 			notok();
 			return (-1);
 		}
-		if (is_ordered(ac, args) == ERROR)
-		{
+		i++;
+	}
+	if (is_ordered(ac, args) == ERROR)
+	{
 			write(1, "order", 5);
 			notok();
 			return (-1);
-		}
-		i++;
 	}
 	free(arr);
 	return (OK);
