@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/11 18:07:42 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 19:32:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void printArrays(t_stack *stack_a, t_stack *stack_b)
 
 t_stack *clean_args(char **args, int argc)
 {
-    parse_args(argc, args);
+   // if (parse_args(argc, args) == OK)
+        //printf("OK");
     t_stack *clean = malloc(sizeof(t_stack));
     int *arr = malloc((argc - 1) * sizeof(int));
     for (int i = 1; i < argc; i++)
