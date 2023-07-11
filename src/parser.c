@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/10 19:02:23 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 13:12:42 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@
 int	is_ordered(char **arg)
 {
 	int i = 0;
-	int j = 0;
-	int arr;
+	int *arr;
 
-	arr = psatoi(*arg);
-	while (arr[i])
+	arr = NULL;
+	while (arr[i] != '\0')
 	{
+		arr[i] = atoi(arg[i]);
 		if (arr[i] < arr[i + 1])
 		{
 			i++;
 		}
 		else
-			return (ERROR);
+			return (OK);
 	}
-	return (OK);
+	return (ERROR);
 }
 
-int	is_num(char **arg)
+int	is_num(char *arg)
 {
 	int i = 0;
 	if (arg[0] == '\0')
@@ -70,18 +70,18 @@ int	parse_args(char **args)
 {
 	if (is_dup(args) == ERROR)
 	{
-		write(STDERR_FILENO, "Error\n", 6);
+		write(STDERR_FILENO, "ErrorDu\n", 8);
 		return ERROR;
 	}
-	if (is_num(args) == ERROR)
+	else if (is_num(*args) != ERROR)
 	{
-		write(STDERR_FILENO, "Error\n", 6);
+		write(STDERR_FILENO, "ErrorNu\n", 8);
 		return ERROR;
 	}
-	//if (is_ordered(args) == ERROR)
-	//{
-		//write(STDERR_FILENO, "Error\n", 6);
-		//return ERROR;
-	//}
+	else if (is_ordered(args) != ERROR)
+	{
+		write(STDERR_FILENO, "ErrorOr\n", 8);
+		return ERROR;
+	}
 	return (OK);
 }

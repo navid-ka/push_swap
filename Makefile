@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
+#    By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/08 14:22:36 by bifrost          ###   ########.fr        #
+#    Updated: 2023/07/11 13:06:39 by nkeyani-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = $(BINDIR)/push_swap
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin

@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/10 18:46:42 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 12:49:47 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	swap(int *a, int *b);
 int		psatoi(char *str);
 int		is_dup(char **arg);
 int		parse_args(char **args);
-int		is_num(char **arg);
+int		is_num(char *arg);
 int		is_ordered(char **arg);
 
 #endif
