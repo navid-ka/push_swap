@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/11 12:41:02 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:06:51 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	notok(void)
 {
 	write(STDERR_FILENO, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }
 
 int	psatoi(char *str)
@@ -24,8 +25,9 @@ int	psatoi(char *str)
 
 	nb = 0;
 	sign = 1;
-	while ((*str == ' ') || (*str == '\t') || (*str == '\n')
-		|| (*str == '\v') || (*str == '\f') || (*str == '\r'))
+	if (!(*str >= '0' && *str <= '9'))
+		notok();
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	while (*str == '-' || *str == '+')
 	{
@@ -35,8 +37,6 @@ int	psatoi(char *str)
 			sign = -1;
 		}
 		str++;
-		if (!(*str >= '0' && *str <= '9'))
-			return (ERROR);
 	}
 	while (*str >= '0' && *str <= '9')
 	{

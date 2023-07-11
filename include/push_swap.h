@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/11 12:49:47 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:10:56 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	swap(int *a, int *b);
 int		psatoi(char *str);
-int		is_dup(char **arg);
-int		parse_args(char **args);
+int		is_dup(int *arg);
+int		parse_args(int ac, char **args);
 int		is_num(char *arg);
-int		is_ordered(char **arg);
+int		is_ordered(int ac, char **arg);
+void	notok(void);
 
 #endif

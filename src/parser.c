@@ -6,82 +6,76 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/11 13:12:42 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:47:43 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-int	is_ordered(char **arg)
+int	is_ordered(int ac, char **arg)
 {
-	int i = 0;
+	int i = -1;
 	int *arr;
 
-	arr = NULL;
-	while (arr[i] != '\0')
-	{
+	arr = malloc(ac -1 * sizeof(int));
+	while (arg[++i])
 		arr[i] = atoi(arg[i]);
+	i = 0;
+	while (i <= ac - 1)
+	{
 		if (arr[i] < arr[i + 1])
-		{
 			i++;
-		}
 		else
 			return (OK);
 	}
+	free(arr);
 	return (ERROR);
 }
 
-int	is_num(char *arg)
-{
-	int i = 0;
-	if (arg[0] == '\0')
-		return (ERROR);
-	i = 0;
-	if ((arg[0] == '-' || arg[0] == '+') && arg[1])
-		i = 1;
-	while (arg[i] && (arg[i] > '0' && arg[i] < '9'))
-		i++;
-	if (arg[i] && (arg[i] < '0' || arg[i] > '9'))
-		return (ERROR);
-	return (OK);
-}
-
-int	is_dup(char **arg)
+int	is_dup(int *arg)
 {
 	int	i;
 	int	j;
 
-	j = 0;
+	j = 1;
 	i = 0;
+	
 	while (arg[i])
 	{
-		if (arg[i] == arg[j])
+		while (arg[i + j])
 		{
+			if (arg[i] == arg[i + j])
+				return (ERROR);
 			j++;
-			return (ERROR);
 		}
 		i++;
 	}
 	return (OK);
 }
 
-int	parse_args(char **args)
+int	parse_args(int ac, char **args)
 {
-	if (is_dup(args) == ERROR)
+
+	int *arr;
+	int i = 0;
+	arr = malloc(ac -1 * sizeof(int));
+	while (1)
 	{
-		write(STDERR_FILENO, "ErrorDu\n", 8);
-		return ERROR;
+		arr[i] = atoi(args[i]);
+		if (is_dup(&arr[i]) == ERROR)
+		{
+			write(1, "dup", 3);
+			notok();
+			return (-1);
+		}
+		if (is_ordered(ac, args) == ERROR)
+		{
+			write(1, "order", 5);
+			notok();
+			return (-1);
+		}
+		i++;
 	}
-	else if (is_num(*args) != ERROR)
-	{
-		write(STDERR_FILENO, "ErrorNu\n", 8);
-		return ERROR;
-	}
-	else if (is_ordered(args) != ERROR)
-	{
-		write(STDERR_FILENO, "ErrorOr\n", 8);
-		return ERROR;
-	}
+	free(arr);
 	return (OK);
 }
