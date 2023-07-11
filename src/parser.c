@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/11 18:54:47 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/11 19:50:02 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	is_ordered(int ac, char **arg)
 		if (arr[i] < arr[i + 1])
 			i++;
 		else
-			return (OK);
+			return (ERROR);
 	}
 	free(arr);
-	return (ERROR);
+	return (OK);
 }
 
 int	is_dup(int *arg)
@@ -42,7 +42,7 @@ int	is_dup(int *arg)
 	
 	while (arg[i])
 	{
-		while (arg[i + j])
+		while (arg[j])
 		{
 			if (arg[i] == arg[i + j])
 				return (ERROR);
@@ -70,12 +70,12 @@ int	parse_args(int ac, char **args)
 		}
 		i++;
 	}
-	if (is_ordered(ac, args) == ERROR)
+	/*if (is_ordered(ac, args) == ERROR)
 	{
 			write(1, "order", 5);
 			notok();
 			return (-1);
-	}
+	}*/
 	free(arr);
 	return (OK);
 }
