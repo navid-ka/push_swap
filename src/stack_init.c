@@ -6,23 +6,23 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/13 19:09:14 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 19:51:53 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-bool	stack_sorted(t_stack *stack)
+int	stack_sorted(t_stack *stack)
 {
 	if (NULL == stack)
-		return (true);
+		return (0);
 	while (stack->next)
 	{
 		if (stack->data > stack->next->data)
-			return (false);
+			return (1);
 		stack = stack->next;
 	}
-	return (true);
+	return (0);
 }
 
 

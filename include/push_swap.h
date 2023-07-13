@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/13 19:03:17 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 19:56:33 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,7 @@ void	swap(int *a, int *b);*/
 int		psatoi(char *str);
 void	error_exit(void);
 void	stack_init(t_stack **a, char **argv);
-void	*lstnew(t_stack **a, int data);
-t_stack	*lstlast(t_stack *lst);
-void	lstadd_back(t_stack **lst, t_stack *new);
-bool	stack_sorted(t_stack *stack);
+int		stack_sorted(t_stack *stack);
 int		ft_strcmp(const char *s1, const char *s2);
 void 	printer(t_stack **stack_a); //Remove
 

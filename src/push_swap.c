@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/13 19:10:20 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 19:52:14 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	main(int argc, char **argv)
 			error_exit();
 	}
 	stack_init(&a, argv + 1);
-	//if (stack_sorted(a) == false)
-		//error_exit();
+	if (!stack_sorted(a))
+		error_exit();
 	printer(&a);
 	return (0);
 }
