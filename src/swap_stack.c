@@ -6,13 +6,13 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 01:15:22 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 14:18:22 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 14:31:08 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	swap(int *a, int *b)
+/*void	swap(int *a, int *b)
 {
 	int	middleman;
 
@@ -39,3 +39,4 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 	swap(&stack_b->data[0], &stack_b->data[1]);
 	write(1, "ss\n", 3);
 }
+*/

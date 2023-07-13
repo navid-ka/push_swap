@@ -6,13 +6,13 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:41:30 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/08 14:18:02 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 14:30:56 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+/*void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	int	middleman;
 	int	i;
@@ -67,3 +67,4 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	stack_b->len++;
 	write(1, "pb\n", 3);
 }
+*/
