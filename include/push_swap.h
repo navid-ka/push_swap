@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/13 14:31:16 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 17:32:38 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_stack
 {
@@ -45,5 +46,7 @@ void	stack_init(t_stack **a, char **argv);
 void	*lstnew(t_stack **a, int data);
 t_stack	*lstlast(t_stack *lst);
 void	lstadd_back(t_stack **lst, t_stack *new);
+int		ft_strcmp(const char *s1, const char *s2);
+bool	stack_sorted(t_stack *stack);
 
 #endif
