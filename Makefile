@@ -6,7 +6,7 @@
 #    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/13 13:47:22 by bifrost          ###   ########.fr        #
+#    Updated: 2023/07/13 18:52:02 by bifrost          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
 SRC = src/push_swap.c src/papb.c src/swap_stack.c src/utils.c \
-src/split.c src/stack_init.c src/node.c 
-
+src/stack_init.c src/node.c
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 COLOR_RESET = $(shell tput sgr0)
 COLOR = $(shell tput setaf 2)
@@ -31,13 +30,15 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 ${NAME}: ${OBJECTS}
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) -o ${NAME} ${OBJECTS}
+	@$(MAKE) -C include/libft
+	@$(CC) $(CFLAGS) -o ${NAME} ${OBJECTS} -Linclude/libft include/libft/bin/libft.a
 	@printf "\n$(COLOR)$(KAOMOJI_SUCCESS) Successfully compiled!$(COLOR_RESET)"
 
 all: ${NAME}
 
 fclean: clean
 	@rm -rf ${BINDIR}
+	@$(MAKE) -C include/libft fclean
 
 clean:
 	@echo "$(COLOR)$(KAOMOJI_REMOVE)$(COLOR_RESET)"

@@ -6,11 +6,12 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/13 17:42:55 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 19:10:20 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include "../include/libft/include/libft.h"
 
 void printer(t_stack **stack_a)
 {
@@ -27,19 +28,19 @@ void printer(t_stack **stack_a)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	//t_stack	*b;
 
 	a = NULL;
-	//b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
+	{
 		argv = ft_split(argv[1], ' ');
-	if (stack_sorted(a) == false)
-		error_exit();
+		if (argv == NULL)
+			error_exit();
+	}
 	stack_init(&a, argv + 1);
-		printer(&a);
-
+	//if (stack_sorted(a) == false)
+		//error_exit();
+	printer(&a);
 	return (0);
 }
-

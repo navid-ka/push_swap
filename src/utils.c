@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/13 17:27:00 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 18:38:06 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	psatoi(char *str)
 	return (nb * sign);
 }
 
-size_t	ft_strlen(const char *s)
+/*size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -55,7 +55,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
+*/
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;

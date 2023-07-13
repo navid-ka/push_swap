@@ -6,11 +6,11 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:32:48 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/13 13:35:08 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 18:37:57 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+/*#include "../include/push_swap.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -107,3 +107,4 @@ char	**ft_split(char const *s, char c)
 	arr[i] = NULL;
 	return (arr);
 }
+*/

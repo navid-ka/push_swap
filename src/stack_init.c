@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/13 17:33:03 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/13 19:09:14 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 bool	stack_sorted(t_stack *stack)
 {
 	if (NULL == stack)
-		return (1);
+		return (true);
 	while (stack->next)
 	{
 		if (stack->data > stack->next->data)
@@ -25,41 +25,51 @@ bool	stack_sorted(t_stack *stack)
 	return (true);
 }
 
-static bool	is_dup(char **argv)
-{
-	int	i;
-	int	j;
 
-	i = 1;
-	while (argv[i])
+int	is_dup(t_stack *a, int nbr)
+{
+	if (NULL == a)
+		return (0);
+	while (a)
 	{
-		j = i + 1;
-		while (argv[j])
-		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
-				return (false);
-			j++;
-		}
-		i++;
+		if (a->data == nbr)
+			return (1);
+		a = a->next;
 	}
-	return (true);
+	return (0);
 }
 
-static void	create_init(t_stack **a, int nbr)
+t_stack	*find_last_node(t_stack *head)
+{
+	if (NULL == head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
+}
+
+static void	create_init(t_stack **stack, int nbr)
 {
 	t_stack	*node;
+	t_stack	*last_node;
 
+	if (NULL == stack)
+		return ;
 	node = malloc(sizeof(t_stack));
-	if (!node)
-		error_exit();
-	node->data = (int)nbr;
+	if (NULL == node)
+		return ;
 	node->next = NULL;
-	if (*a == NULL)
-		*a = node;
+	node->data = nbr;
+	if (NULL == *stack)
+	{
+		*stack = node;
+		node->prev = NULL;
+	}
 	else
 	{
-		node->next = *a;
-		*a = node;
+		last_node = find_last_node(*stack);
+		last_node->next = node;
+		node->prev = last_node;
 	}
 }
 
@@ -74,9 +84,9 @@ void	stack_init(t_stack **a, char **argv)
 		nbr = psatoi(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			error_exit();
-		else if (is_dup(argv) == false)
+		if (is_dup(*a, nbr))
 			error_exit();
 		create_init(a, nbr);
-		i++;
+		++i;
 	}
 }
