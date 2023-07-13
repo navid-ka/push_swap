@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+         #
+#    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/11 13:06:39 by nkeyani-         ###   ########.fr        #
+#    Updated: 2023/07/13 13:47:22 by bifrost          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ CFLAGS = -Wall -Werror -Wextra -g
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
-SRC = src/push_swap.c src/papb.c src/swap_stack.c src/utils.c src/parser.c
+SRC = src/push_swap.c src/papb.c src/swap_stack.c src/utils.c \
+src/split.c src/stack_init.c src/node.c 
+
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 COLOR_RESET = $(shell tput sgr0)
 COLOR = $(shell tput setaf 2)

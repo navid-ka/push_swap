@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/11 18:06:51 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:34:40 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	notok(void)
+void	error_exit(void)
 {
 	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
@@ -26,7 +26,7 @@ int	psatoi(char *str)
 	nb = 0;
 	sign = 1;
 	if (!(*str >= '0' && *str <= '9'))
-		notok();
+		error_exit();
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	while (*str == '-' || *str == '+')
@@ -44,4 +44,14 @@ int	psatoi(char *str)
 		str++;
 	}
 	return (nb * sign);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
 }

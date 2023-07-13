@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   node.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 10:03:49 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/10 10:04:37 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:52:08 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+void	lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*node;
 
@@ -21,22 +21,24 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		*lst = new;
 		return ;
 	}
-	node = ft_lstlast(*lst);
+	node = lstlast(*lst);
 	node->next = new;
 }
 
-t_stack	*ft_lstnew(int *data)
+void	*lstnew(t_stack **a, int data)
 {
 	t_stack	*node;
 
-	node = malloc(sizeof(t_list));
+	node = *a;
+	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
+	node->data = data;
 	node->next = NULL;
 	return (node);
 }
 
-t_stack	*ft_lstlast(t_stack *lst)
+t_stack	*lstlast(t_stack *lst)
 {
 	t_stack	*node;
 
