@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/14 19:40:24 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/14 19:56:24 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ static void	populate_stack(t_stack **stack, int nbr)
 
 void	stack_init(t_stack **a, char **argv)
 {
-	long	nbr;
-	int		i;
+	long long	nbr;
+	int			i;
 
 	i = 0;
 	while (argv[i])

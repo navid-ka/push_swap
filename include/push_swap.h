@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/14 18:51:39 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/14 19:57:14 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,18 @@ enum
 	ERROR,
 };
 
-void	sa(t_stack *stack_a);
-
-void	sb(t_stack *stack_b);
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
-void	swap(int *a, int *b);
-int		psatoi(char *str);
-void	error_exit(void);
-void	stack_init(t_stack **a, char **argv);
-int		stack_sorted(t_stack *stack);
-int		ft_strcmp(const char *s1, const char *s2);
-void	lstadd_front(t_stack **lst, t_stack *new);
-void printer(t_stack **stack_a, t_stack **stack_b); //Remove
+long long		psatoi(char *str);
+void			sa(t_stack *stack_a);
+void			sb(t_stack *stack_b);
+void			ss(t_stack *stack_a, t_stack *stack_b);
+void			pa(t_stack **stack_a, t_stack **stack_b);
+void			pb(t_stack **stack_a, t_stack **stack_b);
+void			swap(int *a, int *b);
+void			error_exit(void);
+void			stack_init(t_stack **a, char **argv);
+int				stack_sorted(t_stack *stack);
+int				ft_strcmp(const char *s1, const char *s2);
+void			lstadd_front(t_stack **lst, t_stack *new);
+void 			printer(t_stack **stack_a, t_stack **stack_b); //Remove
 
 #endif

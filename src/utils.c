@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/13 19:56:06 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/14 19:53:12 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	error_exit(void)
 	exit(EXIT_FAILURE);
 }
 
-int	psatoi(char *str)
+long long	psatoi(char *str)
 {
-	int		sign;
-	long	nb;
+	long 	sign;
+	long long	nb;
 
 	nb = 0;
 	sign = 1;
