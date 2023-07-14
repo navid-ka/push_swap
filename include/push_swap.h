@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/14 12:51:22 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/14 18:51:39 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,15 @@ void	sa(t_stack *stack_a);
 
 void	sb(t_stack *stack_b);
 void	ss(t_stack *stack_a, t_stack *stack_b);
-void	pa(t_stack *stack_a, t_stack *stack_b);
-void	pb(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
 void	swap(int *a, int *b);
 int		psatoi(char *str);
 void	error_exit(void);
 void	stack_init(t_stack **a, char **argv);
 int		stack_sorted(t_stack *stack);
 int		ft_strcmp(const char *s1, const char *s2);
-void 	printer(t_stack **stack_a); //Remove
+void	lstadd_front(t_stack **lst, t_stack *new);
+void printer(t_stack **stack_a, t_stack **stack_b); //Remove
 
 #endif
