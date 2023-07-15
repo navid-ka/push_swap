@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 12:00:22 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 12:19:02 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
+		return (0);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	stack_init(&a, argv + 1);
