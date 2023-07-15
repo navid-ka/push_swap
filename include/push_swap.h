@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/15 02:59:31 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 03:09:27 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int				stack_sorted(t_stack *stack);
 int				ft_strcmp(const char *s1, const char *s2);
 void			lstadd_front(t_stack **lst, t_stack *new);
 t_stack			*radix(t_stack *stack_a, t_stack *stack_b);
-t_stack			*ft_index(t_stack *stack_a, int count);
+t_stack			*stack_index(t_stack *stack_a, int count);
 t_stack			*index_init(t_stack *stack_a);
 int				lstsize(t_stack *lst);
 void 			printer(t_stack **stack_a, t_stack **stack_b); //Remove

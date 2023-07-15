@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:23:33 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 02:58:58 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 03:16:07 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,71 +28,71 @@ int	index_is_sort(t_stack *stack_a, int count)
 	return (0);
 }
 
-int	find_min_num(t_stack *stack_a)
+int	find_min(t_stack *stack_a)
 {
-	t_stack	*min_int;
+	t_stack	*min;
 	t_stack	*current;
 
-	min_int = stack_a;
+	min = stack_a;
 	current = stack_a;
-	while (min_int->idx != -1)
-		min_int = min_int->next;
+	while (min->idx != -1)
+		min = min->next;
 	while (current != NULL)
 	{
-		if (current->idx == -1 && current->data <= min_int->data)
+		if (current->idx == -1 && current->data <= min->data)
 		{
-			min_int = current;
+			min = current;
 		}
 		current = current->next;
 	}
-	return (min_int->data);
+	return (min->data);
 }
 
-int	ft_find_index(t_stack *stack_a)
+int	find_index(t_stack *stack_a)
 {
 	int		i;
-	t_stack	*aux;
+	t_stack	*temp;
 
-	aux = stack_a;
+	temp = stack_a;
 	i = -1;
-	while (aux != NULL)
+	while (temp != NULL)
 	{
-		if (aux->idx != -1)
+		if (temp->idx != -1)
 		{
-			if (aux->idx > i)
-				i = aux->idx;
+			if (temp->idx > i)
+				i = temp->idx;
 		}
-		aux = aux->next;
+		temp = temp->next;
 	}
 	return (i);
 }
 
-t_stack	*ft_index(t_stack *stack_a, int count)
+t_stack	*stack_index(t_stack *stack_a, int count)
 {
-	t_stack	*aux;
+	t_stack	*temp;
 	int		min;
 	int		idx;
 
-	min = find_min_num(stack_a);
-	idx = (ft_find_index(stack_a)) + 1;
-	aux = stack_a;
-	while (aux != NULL)
+	min = find_min(stack_a);
+	idx = (find_index(stack_a)) + 1;
+	temp = stack_a;
+	while (temp != NULL)
 	{
-		if (aux->idx == -1)
+		if (temp->idx == -1)
 		{
-			if (aux->data == min)
+			if (temp->data == min)
 			{
-				aux->idx = idx;
+				temp->idx = idx;
 				min++;
 				idx++;
 			}
 		}
-		aux = aux->next;
+		temp = temp->next;
 	}
-	aux = stack_a;
-	if ((index_is_sort(aux, count)) == 1)
-		ft_index(aux, count);
-	return (aux);
+	temp = stack_a;
+	if ((index_is_sort(temp, count)) == 1)
+		stack_index(temp, count);
+	return (temp);
 }
 
 t_stack	*radix(t_stack *stack_a, t_stack *stack_b)
@@ -121,6 +121,7 @@ t_stack	*radix(t_stack *stack_a, t_stack *stack_b)
 		bit = bit << 1;
 		i--;
 	}
+	printer(&stack_a, &stack_b);
 	return (stack_a);
 }
 

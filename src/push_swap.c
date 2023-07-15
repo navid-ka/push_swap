@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 02:58:54 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 03:15:47 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int	main(int argc, char **argv)
 	}
 	stack_init(&a, argv + 1);
 	a = index_init(a);
-	a = ft_index(a, argc - 1);
+	a = stack_index(a, argc - 1);
 	if (stack_sorted(a) != 1)
 		radix(a, b);
-	printer(&a, &b);
+	//printer(&a, &b);
 	return (0);
 }
