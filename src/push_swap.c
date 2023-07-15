@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 03:19:30 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 03:19:48 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_stack	*index_init(t_stack *stack_a)
 	t_stack	*temp;
 
 	temp = stack_a;
-	while (aux != NULL)
+	while (temp != NULL)
 	{
 		temp->idx = -1;
 		temp = temp->next;
