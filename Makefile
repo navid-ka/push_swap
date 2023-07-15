@@ -6,7 +6,7 @@
 #    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/15 14:00:45 by bifrost          ###   ########.fr        #
+#    Updated: 2023/07/15 14:03:05 by bifrost          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ re: fclean all
 
 pull: 
 	git submodule update --recursive --remote
-	@echo "Pulled recursive"
+	@printf "\n$(COLOR)$(KAOMOJI_SUCCESS) Pull submodule success!$(COLOR_RESET)"
 	git pull
 
 git: fclean
