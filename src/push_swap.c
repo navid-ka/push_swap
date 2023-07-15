@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 03:15:47 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 03:19:30 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ void printer(t_stack **stack_a, t_stack **stack_b)
 
 t_stack	*index_init(t_stack *stack_a)
 {
-	t_stack	*aux;
+	t_stack	*temp;
 
-	aux = stack_a;
+	temp = stack_a;
 	while (aux != NULL)
 	{
-		aux->idx = -1;
-		aux = aux->next;
+		temp->idx = -1;
+		temp = temp->next;
 	}
-	aux = stack_a;
-	return (aux);
+	temp = stack_a;
+	return (temp);
 }
 
 int	main(int argc, char **argv)
