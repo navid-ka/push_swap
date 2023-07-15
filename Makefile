@@ -6,7 +6,7 @@
 #    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/15 13:57:34 by bifrost          ###   ########.fr        #
+#    Updated: 2023/07/15 14:00:45 by bifrost          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,11 @@ clean:
 
 re: fclean all
 
+pull: 
+	git submodule update --recursive --remote
+	@echo "Pulled recursive"
+	git pull
+
 git: fclean
 	git submodule update --recursive --remote
 	@echo "Pulled recursive"
@@ -54,4 +59,4 @@ git: fclean
 	git commit -am "$$MSG"
 	git push
 
-.PHONY: clean all fclean re
+.PHONY: clean all fclean re git pull
