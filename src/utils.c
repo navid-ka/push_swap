@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 02:39:59 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 12:13:08 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,24 @@ void	error_exit(void)
 	exit(EXIT_FAILURE);
 }
 
+int	error_syntax(char *str_nbr)
+{
+	if (!(*str_nbr == '+'
+			|| *str_nbr == '-'
+			|| (*str_nbr >= '0' && *str_nbr <= '9')))
+		return (1);
+	if ((*str_nbr == '+'
+			|| *str_nbr == '-')
+		&& !(str_nbr[1] >= '0' && str_nbr[1] <= '9'))
+		return (1);
+	while (*++str_nbr)
+	{
+		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
+			return (1);
+	}
+	return (0);
+}
+
 long long	psatoi(char *str)
 {
 	long		sign;
@@ -25,8 +43,7 @@ long long	psatoi(char *str)
 
 	nb = 0;
 	sign = 1;
-	if (!(*str >= '0' && *str <= '9'))
-		error_exit();
+
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	while (*str == '-' || *str == '+')
@@ -37,6 +54,8 @@ long long	psatoi(char *str)
 			sign = -1;
 		}
 		str++;
+		if (!(*str >= '0' && *str <= '9'))
+			error_exit();
 	}
 	while (*str >= '0' && *str <= '9')
 	{

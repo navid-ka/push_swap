@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 02:59:40 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 12:14:00 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void	stack_init(t_stack **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
+		if (error_syntax(argv[i]))
+			error_exit();
 		nbr = psatoi(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			error_exit();
