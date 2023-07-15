@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/14 19:53:12 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:39:59 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	error_exit(void)
 
 long long	psatoi(char *str)
 {
-	long 	sign;
+	long		sign;
 	long long	nb;
 
 	nb = 0;
@@ -54,4 +54,19 @@ int	ft_strcmp(const char *s1, const char *s2)
 	while (s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
 	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+}
+
+int	lstsize(t_stack *lst)
+{
+	int		i;
+	t_stack	*node;
+
+	i = 0;
+	node = lst;
+	while (node != NULL)
+	{
+		node = node->next;
+		i++;
+	}
+	return (i);
 }

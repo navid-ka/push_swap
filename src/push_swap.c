@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/14 20:00:02 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:58:54 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ void printer(t_stack **stack_a, t_stack **stack_b)
 	printf("\n");
 }
 
+t_stack	*index_init(t_stack *stack_a)
+{
+	t_stack	*aux;
+
+	aux = stack_a;
+	while (aux != NULL)
+	{
+		aux->idx = -1;
+		aux = aux->next;
+	}
+	aux = stack_a;
+	return (aux);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -49,16 +63,10 @@ int	main(int argc, char **argv)
 			error_exit();
 	}
 	stack_init(&a, argv + 1);
-	if (!stack_sorted(a))
-		error_exit();
-	printer(&a, &b);
-	sa(a);
-	printer(&a, &b);
-	pb(&a, &b);
-	printer(&a, &b);
-	sa(a);
-	printer(&a, &b);
-	pa(&a, &b);
+	a = index_init(a);
+	a = ft_index(a, argc - 1);
+	if (stack_sorted(a) != 1)
+		radix(a, b);
 	printer(&a, &b);
 	return (0);
 }

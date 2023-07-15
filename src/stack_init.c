@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/14 19:56:24 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:59:40 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 int	stack_sorted(t_stack *stack)
 {
-	if (NULL == stack)
-		return (0);
-	while (stack->next)
-	{
-		if (stack->data > stack->next->data)
-			return (1);
-		stack = stack->next;
-	}
-	return (0);
-}
+	t_stack	*temp;
 
+	temp = stack;
+	while (temp != NULL && temp->next != NULL)
+	{
+		if (temp->data < temp->next->data)
+		{
+			temp = temp->next;
+		}
+		else
+			return (0);
+	}
+	return (1);
+}
 
 int	is_dup(t_stack *a, int nbr)
 {
