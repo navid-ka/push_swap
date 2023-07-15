@@ -6,7 +6,7 @@
 #    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/15 01:41:31 by bifrost          ###   ########.fr        #
+#    Updated: 2023/07/15 13:57:34 by bifrost          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,8 @@ clean:
 re: fclean all
 
 git: fclean
+	git submodule update --recursive --remote
+	@echo "Pulled recursive"
 	@echo "Commit:"
 	@read MSG; \
 	git commit -am "$$MSG"
