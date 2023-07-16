@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:41:30 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 01:39:00 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 18:59:49 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,4 @@ void	ra(t_stack **stack_a)
 		current->next->next = NULL;
 	}
 	write(1, "ra\n", 3);
-}
-
-void	lstadd_front(t_stack **lst, t_stack *new)
-{
-	new->next = *lst;
-	*lst = new;
 }

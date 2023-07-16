@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 12:13:08 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 18:57:18 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,4 @@ int	ft_strcmp(const char *s1, const char *s2)
 	while (s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
 	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
-}
-
-int	lstsize(t_stack *lst)
-{
-	int		i;
-	t_stack	*node;
-
-	i = 0;
-	node = lst;
-	while (node != NULL)
-	{
-		node = node->next;
-		i++;
-	}
-	return (i);
 }

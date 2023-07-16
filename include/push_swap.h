@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/16 15:43:53 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/16 19:00:41 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_stack
 	int				data;
 	int				idx;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 enum
@@ -55,7 +54,6 @@ t_stack			*stack_index(t_stack *stack_a, int count);
 t_stack			*index_init(t_stack *stack_a);
 void			stack_init(t_stack **a, char **argv);
 int				stack_sorted(t_stack *stack);
-char			**strplit(char *str, char separator);
 void 			printer(t_stack **stack_a, t_stack **stack_b); //Remove
 
 #endif
