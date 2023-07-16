@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/15 23:19:07 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 15:43:53 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ int				error_syntax(char *str_nbr);
 int				ft_strcmp(const char *s1, const char *s2);
 void			lstadd_front(t_stack **lst, t_stack *new);
 int				lstsize(t_stack *lst);
+t_stack			*lstnew(int nbr);
+void			lstadd_back(t_stack **lst, t_stack *new);
+t_stack			*lstlast(t_stack *lst);
 t_stack			*radix(t_stack *stack_a, t_stack *stack_b);
 t_stack			*stack_index(t_stack *stack_a, int count);
 t_stack			*index_init(t_stack *stack_a);

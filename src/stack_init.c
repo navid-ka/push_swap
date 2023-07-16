@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/16 12:34:13 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 15:44:46 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	is_dup(t_stack *a, int nbr)
 	return (0);
 }
 
-/* REDOOOOOOOOOOO ALL THIS!
+/*/ REDOOOOOOOOOOO ALL THIS!
 t_stack	*find_last_node(t_stack *head)
 {
 	if (NULL == head)
@@ -92,7 +92,8 @@ void	stack_init(t_stack **a, char **argv)
 			error_exit();
 		if (is_dup(*a, nbr))
 			error_exit();
-		populate_stack(a, nbr);
+		lstadd_back(a, lstnew(nbr));
+		//populate_stack(a, nbr);
 		++i;
 	}
 }
