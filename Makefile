@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+         #
+#    By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/16 15:45:13 by nkeyani-         ###   ########.fr        #
+#    Updated: 2023/07/16 18:49:51 by bifrost          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
 SRC = src/push_swap.c src/papb.c src/swap_stack.c src/utils.c \
-src/stack_init.c src/radix.c src/strplit.c src/node.c
+src/stack_init.c src/radix.c src/node.c src/tinysort.c
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 COLOR_RESET = $(shell tput sgr0)
 COLOR = $(shell tput setaf 2)

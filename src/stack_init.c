@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/16 15:44:46 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/16 18:46:07 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,41 +42,6 @@ int	is_dup(t_stack *a, int nbr)
 	return (0);
 }
 
-/*/ REDOOOOOOOOOOO ALL THIS!
-t_stack	*find_last_node(t_stack *head)
-{
-	if (NULL == head)
-		return (NULL);
-	while (head->next)
-		head = head->next;
-	return (head);
-}
-
-static void	populate_stack(t_stack **stack, int nbr)
-{
-	t_stack	*node;
-	t_stack	*last_node;
-
-	if (NULL == stack)
-		return ;
-	node = malloc(sizeof(t_stack));
-	if (NULL == node)
-		return ;
-	node->next = NULL;
-	node->data = nbr;
-	if (NULL == *stack)
-	{
-		*stack = node;
-		node->prev = NULL;
-	}
-	else
-	{
-		last_node = find_last_node(*stack);
-		last_node->next = node;
-		node->prev = last_node;
-	}
-}*/
-
 void	stack_init(t_stack **a, char **argv)
 {
 	long long	nbr;
@@ -93,7 +58,6 @@ void	stack_init(t_stack **a, char **argv)
 		if (is_dup(*a, nbr))
 			error_exit();
 		lstadd_back(a, lstnew(nbr));
-		//populate_stack(a, nbr);
 		++i;
 	}
 }
