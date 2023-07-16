@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 12:14:00 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 12:34:13 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	is_dup(t_stack *a, int nbr)
 	return (0);
 }
 
+/* REDOOOOOOOOOOO ALL THIS!
 t_stack	*find_last_node(t_stack *head)
 {
 	if (NULL == head)
@@ -74,7 +75,7 @@ static void	populate_stack(t_stack **stack, int nbr)
 		last_node->next = node;
 		node->prev = last_node;
 	}
-}
+}*/
 
 void	stack_init(t_stack **a, char **argv)
 {

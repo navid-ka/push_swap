@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/15 11:49:10 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/15 23:19:07 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ t_stack			*stack_index(t_stack *stack_a, int count);
 t_stack			*index_init(t_stack *stack_a);
 void			stack_init(t_stack **a, char **argv);
 int				stack_sorted(t_stack *stack);
+char			**strplit(char *str, char separator);
 void 			printer(t_stack **stack_a, t_stack **stack_b); //Remove
 
 #endif
