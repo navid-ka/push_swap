@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:41:30 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/16 18:59:49 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 22:59:17 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,24 @@ void	ra(t_stack **stack_a)
 		current->next->next = NULL;
 	}
 	write(1, "ra\n", 3);
+}
+
+void	rra(t_stack **stack_a)
+{
+	t_stack	*current;
+	t_stack	*prev;
+
+	current = *stack_a;
+	prev = NULL;
+	if (current == NULL || current->next == NULL)
+		return ;
+	while (current->next != NULL)
+	{
+		prev = current;
+		current = current->next;
+	}
+	current->next = *stack_a;
+	*stack_a = current;
+	prev->next = NULL;
+	write(1, "rra\n", 4);
 }

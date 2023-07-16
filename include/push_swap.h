@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/16 19:00:41 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 23:36:59 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void			ss(t_stack *stack_a, t_stack *stack_b);
 void			pa(t_stack **stack_a, t_stack **stack_b);
 void			pb(t_stack **stack_a, t_stack **stack_b);
 void			ra(t_stack **stack_a);
+void			rra(t_stack **stack_a);
 void			swap(int *a, int *b);
 void			error_exit(void);
 int				error_syntax(char *str_nbr);
@@ -54,6 +55,9 @@ t_stack			*stack_index(t_stack *stack_a, int count);
 t_stack			*index_init(t_stack *stack_a);
 void			stack_init(t_stack **a, char **argv);
 int				stack_sorted(t_stack *stack);
+void			tiny_sort_three(t_stack *a);
+void			tiny_sort_four(t_stack *a, t_stack *b);
+t_stack			tiny_sort_five(t_stack *a, t_stack *b);
 void 			printer(t_stack **stack_a, t_stack **stack_b); //Remove
 
 #endif

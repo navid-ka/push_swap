@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/16 17:54:09 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/16 23:37:12 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,13 @@ int	main(int argc, char **argv)
 	if (stack_sorted(a) != 1)
 	{
 		if (argc == 3)
-		{
 			sa(a);
-			printer(&a, &b);
-		}
-		//if (argc == 4)
-			//tiny_sort(a);
+		if (argc == 4)
+			tiny_sort_three(a);
+		if (argc == 5)
+			tiny_sort_four(a, b);
+		//if (argc == 6)
+			//tiny_sort_five(a, b);
 		else
 			radix(a, b);
 	}

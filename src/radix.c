@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:23:33 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/15 03:16:07 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/16 22:18:44 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	index_is_sort(t_stack *stack_a, int count)
 	return (0);
 }
 
-int	find_min(t_stack *stack_a)
+static int	find_min(t_stack *stack_a)
 {
 	t_stack	*min;
 	t_stack	*current;
