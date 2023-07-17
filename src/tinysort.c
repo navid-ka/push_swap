@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tinysort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:35:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/17 15:47:09 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/17 21:51:34 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_stack	*find_max(t_stack *stack)
 {
-	int		max;
+	int	max;
 	t_stack	*max_node;
 
 	if (NULL == stack)
@@ -32,7 +32,7 @@ static t_stack	*find_max(t_stack *stack)
 	return (max_node);
 }
 
-static t_stack	*find_min(t_stack *stack)
+/*static t_stack	*find_min(t_stack *stack)
 {
 	int		min;
 	t_stack	*min_node;
@@ -51,7 +51,7 @@ static t_stack	*find_min(t_stack *stack)
 	}
 	return (min_node);
 }
-
+*/
 void	tiny_sort_three(t_stack *a)
 {
 	t_stack	*max;
@@ -63,44 +63,41 @@ void	tiny_sort_three(t_stack *a)
 		rra(&a);
 	if (a->data > a->next->data)
 		sa(a);
-	printer(&a, &a);
+	//printer(&a, &a);
 }
 
 void	tiny_sort_four(t_stack *a, t_stack *b)
 {
-	t_stack	*min;
-
-	b = NULL;
-	min = find_min(a);
-	while (a->next == min)
-		pb(&a, &b);
+	while (a->idx != 0)
+		rra(&a);
+	pb(&a, &b);
 	tiny_sort_three(a);
 	pa(&a, &b);
 	printer(&a, &b);
 }
 
-void	tiny_sort_five(t_stack *a, t_stack *b)
+void tiny_sort_five(t_stack *a, t_stack *b)
 {
-	//t_stack	*min;
-	//t_stack	*max;
-	//int i = 2;
+	// t_stack	*min;
+	// t_stack	*max;
+	// int i = 2;
 	b = NULL;
-	//min = find_min(a);
-	//max = find_max(a);
-	//while (stack_sorted(a) != 1)
+	// min = find_min(a);
+	// max = find_max(a);
+	// while (stack_sorted(a) != 1)
 	//{
-		//while (i-- > 0)
-		//{
-			//pb(&a, &b);
-		//}
-		//tiny_sort_three(a);
-		sa(a);
-		//pa(&a, &b);
-		pb(&a, &b);
-		pb(&a, &b);
-		rra(&a);
-		pa(&a, &b);
-		tiny_sort_three(a);
-		pa(&a, &b);
+	// while (i-- > 0)
+	//{
+	// pb(&a, &b);
+	//}
+	// tiny_sort_three(a);
+	sa(a);
+	// pa(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	rra(&a);
+	pa(&a, &b);
+	tiny_sort_three(a);
+	pa(&a, &b);
 	//}
 }
