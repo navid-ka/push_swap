@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/17 12:15:27 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:29:04 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	main(int argc, char **argv)
 			tiny_sort_four(a, b);
 		if (argc == 6)
 			tiny_sort_five(a, b);
-		else
+		if (argc > 6)
 			radix(a, b);
 	}
 	return (0);

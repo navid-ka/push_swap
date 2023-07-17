@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:35:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/17 14:23:59 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:47:09 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	tiny_sort_three(t_stack *a)
 		rra(&a);
 	if (a->data > a->next->data)
 		sa(a);
+	printer(&a, &a);
 }
 
 void	tiny_sort_four(t_stack *a, t_stack *b)
@@ -71,11 +72,11 @@ void	tiny_sort_four(t_stack *a, t_stack *b)
 
 	b = NULL;
 	min = find_min(a);
-	if (a == min)
-		rra(&a);
-	pb(&a, &b);
+	while (a->next == min)
+		pb(&a, &b);
 	tiny_sort_three(a);
 	pa(&a, &b);
+	printer(&a, &b);
 }
 
 void	tiny_sort_five(t_stack *a, t_stack *b)
@@ -88,27 +89,18 @@ void	tiny_sort_five(t_stack *a, t_stack *b)
 	//max = find_max(a);
 	//while (stack_sorted(a) != 1)
 	//{
-		printer(&a, &b);
 		//while (i-- > 0)
 		//{
-			//printer(&a, &b);
 			//pb(&a, &b);
 		//}
-		//printer(&a, &b);
 		//tiny_sort_three(a);
 		sa(a);
-		printer(&a, &b);
 		//pa(&a, &b);
 		pb(&a, &b);
 		pb(&a, &b);
-		printer(&a, &b);
 		rra(&a);
-		printer(&a, &b);
 		pa(&a, &b);
 		tiny_sort_three(a);
-		printer(&a, &b);
 		pa(&a, &b);
-		printer(&a, &b);
 	//}
-	printer(&a, &b);
 }
