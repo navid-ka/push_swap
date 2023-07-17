@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:23:33 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/17 21:40:45 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 01:08:14 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,3 @@ t_stack	*radix(t_stack *stack_a, t_stack *stack_b)
 	}
 	return (stack_a);
 }
-

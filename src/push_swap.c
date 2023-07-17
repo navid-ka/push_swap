@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/17 15:29:04 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 01:07:47 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include "../include/libft/include/libft.h"
 
-void printer(t_stack **stack_a, t_stack **stack_b)
+/*void printer(t_stack **stack_a, t_stack **stack_b)
 {
 	printf("Stack A: ");
 	t_stack *current_a = *stack_a;
@@ -31,7 +31,7 @@ void printer(t_stack **stack_a, t_stack **stack_b)
 		current_b = current_b->next;
 	}
 	printf("\n");
-}
+}*/
 
 t_stack	*index_init(t_stack *stack_a)
 {
