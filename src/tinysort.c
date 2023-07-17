@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tinysort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:35:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/16 23:36:39 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/17 14:23:59 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,39 @@ void	tiny_sort_four(t_stack *a, t_stack *b)
 	pb(&a, &b);
 	tiny_sort_three(a);
 	pa(&a, &b);
-	printer(&a, &b);
 }
 
-t_stack	tiny_sort_five(t_stack *a, t_stack *b);
-
+void	tiny_sort_five(t_stack *a, t_stack *b)
+{
+	//t_stack	*min;
+	//t_stack	*max;
+	//int i = 2;
+	b = NULL;
+	//min = find_min(a);
+	//max = find_max(a);
+	//while (stack_sorted(a) != 1)
+	//{
+		printer(&a, &b);
+		//while (i-- > 0)
+		//{
+			//printer(&a, &b);
+			//pb(&a, &b);
+		//}
+		//printer(&a, &b);
+		//tiny_sort_three(a);
+		sa(a);
+		printer(&a, &b);
+		//pa(&a, &b);
+		pb(&a, &b);
+		pb(&a, &b);
+		printer(&a, &b);
+		rra(&a);
+		printer(&a, &b);
+		pa(&a, &b);
+		tiny_sort_three(a);
+		printer(&a, &b);
+		pa(&a, &b);
+		printer(&a, &b);
+	//}
+	printer(&a, &b);
+}

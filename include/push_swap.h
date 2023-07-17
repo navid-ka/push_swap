@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/16 23:36:59 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/17 12:16:27 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void			stack_init(t_stack **a, char **argv);
 int				stack_sorted(t_stack *stack);
 void			tiny_sort_three(t_stack *a);
 void			tiny_sort_four(t_stack *a, t_stack *b);
-t_stack			tiny_sort_five(t_stack *a, t_stack *b);
+void			tiny_sort_five(t_stack *a, t_stack *b);
 void 			printer(t_stack **stack_a, t_stack **stack_b); //Remove
 
 #endif
