@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/16 18:57:18 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 01:10:37 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ long long	psatoi(char *str)
 
 	nb = 0;
 	sign = 1;
-
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	while (*str == '-' || *str == '+')

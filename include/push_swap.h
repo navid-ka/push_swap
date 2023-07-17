@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/18 01:00:57 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 01:10:11 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int				stack_sorted(t_stack *stack);
 void			tiny_sort_three(t_stack *a);
 void			tiny_sort_four(t_stack *a, t_stack *b);
 void			tiny_sort_five(t_stack *a, t_stack *b);
-void 			printer(t_stack **stack_a, t_stack **stack_b); //Remove
+//void 			printer(t_stack **stack_a, t_stack **stack_b);
 
 #endif
