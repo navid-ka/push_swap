@@ -6,52 +6,43 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:35:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/17 21:51:34 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 01:03:59 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static t_stack	*find_max(t_stack *stack)
+int	find_min(t_stack **a)
 {
-	int	max;
-	t_stack	*max_node;
+	int		i;
+	t_stack	*p;
 
-	if (NULL == stack)
-		return (NULL);
-	max = INT_MIN;
-	while (stack)
+	i = 0;
+	p = *a;
+	i = p->idx;
+	while (p != NULL)
 	{
-		if (stack->data > max)
-		{
-			max = stack->data;
-			max_node = stack;
-		}
-		stack = stack->next;
+		if (i > p->idx)
+			i = p->idx;
+		p = p->next;
 	}
-	return (max_node);
+	return (i);
 }
 
-/*static t_stack	*find_min(t_stack *stack)
+t_stack	*find_max(t_stack *stack)
 {
-	int		min;
-	t_stack	*min_node;
+	t_stack	*max;
 
-	if (NULL == stack)
-		return (NULL);
-	min = INT_MAX;
+	max = stack;
 	while (stack)
 	{
-		if (stack->data < min)
-		{
-			min = stack->data;
-			min_node = stack;
-		}
+		if (stack->data > max->data)
+			max = stack;
 		stack = stack->next;
 	}
-	return (min_node);
+	return (max);
 }
-*/
+
 void	tiny_sort_three(t_stack *a)
 {
 	t_stack	*max;
@@ -63,41 +54,50 @@ void	tiny_sort_three(t_stack *a)
 		rra(&a);
 	if (a->data > a->next->data)
 		sa(a);
-	//printer(&a, &a);
 }
 
 void	tiny_sort_four(t_stack *a, t_stack *b)
 {
-	while (a->idx != 0)
-		rra(&a);
-	pb(&a, &b);
-	tiny_sort_three(a);
-	pa(&a, &b);
-	printer(&a, &b);
+	int	i;
+
+	i = 0;
+	while (i < 2)
+	{
+		if (a->idx > find_min(&a))
+			ra(&a);
+		else if (a->idx > find_min(&a))
+			rra(&a);
+		else
+		{
+			pb(&a, &b);
+			i++;
+		}
+	}
+	if (a->idx != find_min(&a))
+		sa(a);
+	while (b != NULL)
+		pa(&a, &b);
 }
 
-void tiny_sort_five(t_stack *a, t_stack *b)
+void	tiny_sort_five(t_stack *a, t_stack *b)
 {
-	// t_stack	*min;
-	// t_stack	*max;
-	// int i = 2;
-	b = NULL;
-	// min = find_min(a);
-	// max = find_max(a);
-	// while (stack_sorted(a) != 1)
-	//{
-	// while (i-- > 0)
-	//{
-	// pb(&a, &b);
-	//}
-	// tiny_sort_three(a);
-	sa(a);
-	// pa(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	rra(&a);
-	pa(&a, &b);
-	tiny_sort_three(a);
-	pa(&a, &b);
-	//}
+	int	i;
+
+	i = 0;
+	while (i < 3)
+	{
+		if (a->idx > find_min(&a))
+			ra(&a);
+		else if (a->idx > find_min(&a))
+			rra(&a);
+		else
+		{
+			pb(&a, &b);
+			i++;
+		}
+	}
+	if (a->idx != find_min(&a))
+		sa(a);
+	while (b != NULL)
+		pa(&a, &b);
 }
