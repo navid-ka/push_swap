@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 10:24:29 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/18 01:10:37 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 12:58:52 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	error_exit(void)
 	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
+
+
 
 int	error_syntax(char *str_nbr)
 {
