@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   papb.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:41:30 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/16 22:59:17 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 18:01:00 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*middleman;
 
+	if (!stack_a || !stack_b)
+		error_exit();
 	middleman = *stack_b;
 	*stack_b = middleman->next;
 	lstadd_front(stack_a, middleman);
@@ -26,8 +28,10 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*middleman;
 
+	if (!stack_a || !stack_b)
+		error_exit();
 	middleman = *stack_a;
-	*stack_a = middleman->next;
+	*stack_a = (*stack_a)->next;
 	lstadd_front(stack_b, middleman);
 	write(1, "pb\n", 3);
 }

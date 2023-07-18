@@ -6,7 +6,7 @@
 #    By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/18 13:32:15 by nkeyani-         ###   ########.fr        #
+#    Updated: 2023/07/18 17:22:22 by nkeyani-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,12 @@ KAOMOJI_REMOVE = (ノಠ益ಠ)ノ彡┻━┻
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@printf "$(COLOR)\rCompiling (╮°-°)╮┳━┳ : $(COLOR_RESET)$<"
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@gcc $(CFLAGS) -c $< -o $@
 
 ${NAME}: ${OBJECTS}
 	@mkdir -p $(@D)
 	@$(MAKE) -C include/libft
-	@$(CC) $(CFLAGS) -o ${NAME} ${OBJECTS} -Linclude/libft include/libft/bin/libft.a
+	@gcc $(CFLAGS) -o ${NAME} ${OBJECTS} -Linclude/libft include/libft/bin/libft.a
 	@printf "\n$(COLOR)$(KAOMOJI_SUCCESS) Successfully compiled!$(COLOR_RESET)"
 
 all: ${NAME}

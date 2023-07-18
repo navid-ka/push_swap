@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   tinysort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:35:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/18 01:03:59 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 18:07:54 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	find_min(t_stack **a)
+int	find_min(t_stack *a)
 {
 	int		i;
 	t_stack	*p;
 
 	i = 0;
-	p = *a;
+	p = a;
 	i = p->idx;
 	while (p != NULL)
 	{
@@ -54,6 +54,7 @@ void	tiny_sort_three(t_stack *a)
 		rra(&a);
 	if (a->data > a->next->data)
 		sa(a);
+	ft_free(&a);
 }
 
 void	tiny_sort_four(t_stack *a, t_stack *b)
@@ -63,9 +64,9 @@ void	tiny_sort_four(t_stack *a, t_stack *b)
 	i = 0;
 	while (i < 2)
 	{
-		if (a->idx > find_min(&a))
+		if (a->idx > find_min(a))
 			ra(&a);
-		else if (a->idx > find_min(&a))
+		else if (a->idx > find_min(a))
 			rra(&a);
 		else
 		{
@@ -73,10 +74,12 @@ void	tiny_sort_four(t_stack *a, t_stack *b)
 			i++;
 		}
 	}
-	if (a->idx != find_min(&a))
+	if (a->idx != find_min(a))
 		sa(a);
 	while (b != NULL)
 		pa(&a, &b);
+	printer(&a, &b);
+	ft_free(&a);
 }
 
 void	tiny_sort_five(t_stack *a, t_stack *b)
@@ -86,9 +89,9 @@ void	tiny_sort_five(t_stack *a, t_stack *b)
 	i = 0;
 	while (i < 3)
 	{
-		if (a->idx > find_min(&a))
+		if (a->idx > find_min(a))
 			ra(&a);
-		else if (a->idx > find_min(&a))
+		else if (a->idx > find_min(a))
 			rra(&a);
 		else
 		{
@@ -96,8 +99,9 @@ void	tiny_sort_five(t_stack *a, t_stack *b)
 			i++;
 		}
 	}
-	if (a->idx != find_min(&a))
+	if (a->idx != find_min(a))
 		sa(a);
 	while (b != NULL)
 		pa(&a, &b);
+	ft_free(&a);
 }

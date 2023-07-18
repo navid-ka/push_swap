@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:23:33 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/18 01:08:14 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 18:06:18 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ t_stack	*stack_index(t_stack *stack_a, int count)
 	return (temp);
 }
 
-t_stack	*radix(t_stack *stack_a, t_stack *stack_b)
+void	radix(t_stack *stack_a, t_stack *stack_b)
 {
 	int		bit;
 	int		i;
@@ -121,5 +121,5 @@ t_stack	*radix(t_stack *stack_a, t_stack *stack_b)
 		bit = bit << 1;
 		i--;
 	}
-	return (stack_a);
+	ft_free(&stack_a);
 }

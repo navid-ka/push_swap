@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:55:28 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/16 18:46:07 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/07/18 16:54:54 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void	stack_init(t_stack **a, char **argv)
 			error_exit();
 		if (is_dup(*a, nbr))
 			error_exit();
-		lstadd_back(a, lstnew(nbr));
+		if (!lstadd_back(a, lstnew(nbr)))
+			error_exit();
 		++i;
 	}
 }

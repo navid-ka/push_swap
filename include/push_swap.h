@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/18 12:59:12 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 18:05:58 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int				ft_strcmp(const char *s1, const char *s2);
 void			lstadd_front(t_stack **lst, t_stack *new);
 int				lstsize(t_stack *lst);
 t_stack			*lstnew(int nbr);
-void			lstadd_back(t_stack **lst, t_stack *new);
+t_stack			*lstadd_back(t_stack **lst, t_stack *new);
 t_stack			*lstlast(t_stack *lst);
-t_stack			*radix(t_stack *stack_a, t_stack *stack_b);
+void			radix(t_stack *stack_a, t_stack *stack_b);
 t_stack			*stack_index(t_stack *stack_a, int count);
 t_stack			*index_init(t_stack *stack_a);
 void			stack_init(t_stack **a, char **argv);
@@ -59,7 +59,8 @@ void			tiny_sort_three(t_stack *a);
 void			tiny_sort_four(t_stack *a, t_stack *b);
 void			tiny_sort_five(t_stack *a, t_stack *b);
 void			lstdelone(t_stack *lst, void (*del)(void *));
-void			lstclear(t_stack **a, void (*del)(void *));
-//void 			printer(t_stack **stack_a, t_stack **stack_b);
+void			lstclear(t_stack **lst, void (*del)(void *));
+void			ft_free(t_stack **stack);
+void 			printer(t_stack **stack_a, t_stack **stack_b);
 
 #endif

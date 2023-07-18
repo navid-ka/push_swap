@@ -6,14 +6,14 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/18 13:34:10 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 18:08:29 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include "../include/libft/include/libft.h"
 
-/*void printer(t_stack **stack_a, t_stack **stack_b)
+void printer(t_stack **stack_a, t_stack **stack_b)
 {
 	printf("Stack A: ");
 	t_stack *current_a = *stack_a;
@@ -31,7 +31,20 @@
 		current_b = current_b->next;
 	}
 	printf("\n");
-}*/
+}
+
+void	ft_free(t_stack **stack)
+{
+	t_stack	*aux;
+
+	while (*stack)
+	{
+		aux = *stack;
+		*stack = (*stack)->next;
+		free(aux);
+	}
+	stack = NULL;
+}
 
 t_stack	*index_init(t_stack *stack_a)
 {
@@ -52,7 +65,6 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-	a = NULL;
 	b = NULL;
 	if (argc == 1 || argv[1][0] == '\0')
 		return (1);
@@ -62,7 +74,10 @@ int	main(int argc, char **argv)
 	if (stack_sorted(a) != 1)
 	{
 		if (argc == 3)
+		{
 			sa(a);
+			ft_free(&a);
+		}
 		if (argc == 4)
 			tiny_sort_three(a);
 		if (argc == 5)
@@ -72,8 +87,5 @@ int	main(int argc, char **argv)
 		if (argc > 6)
 			radix(a, b);
 	}
-	lstclear(&a, free);
-	lstclear(&b, free);
-	//free(&a);
 	return (0);
 }
