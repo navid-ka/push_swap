@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 01:15:22 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/14 12:53:47 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 22:55:15 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ void	sb(t_stack *stack_b)
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	tiny_sort_two(t_stack *stack_a)
 {
-	swap(&stack_a->data, &stack_a->next->data);
-	swap(&stack_b->data, &stack_b->next->data);
-	write(1, "ss\n", 3);
+	sa(stack_a);
+	ft_free(&stack_a);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node_utils_one.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 15:39:39 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/18 16:59:06 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 22:48:39 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	lstdelone(t_stack *lst, void (*del)(void *))
 
 	node = lst;
 	(void)del;
-	//del(node);
 	free(node);
 }
 
@@ -77,26 +76,3 @@ t_stack	*lstlast(t_stack *lst)
 			node = node->next;
 	return (node);
 }
-
-/*void	ft_free(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*aux;
-	t_stack	*next;
-
-	aux = *stack_a;
-	while (aux != NULL)
-	{
-		next = aux->next;
-		free(aux);
-		aux = next;
-	}
-	*stack_a = NULL;
-	aux = *stack_b;
-	while (aux != NULL)
-	{
-		next = aux->next;
-		free(aux);
-		aux = next;
-	}
-	*stack_b = NULL;
-}*/

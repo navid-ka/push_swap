@@ -3,34 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:48:10 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/18 18:08:29 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 22:54:43 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include "../include/libft/include/libft.h"
 
-void printer(t_stack **stack_a, t_stack **stack_b)
+void	printer(t_stack **stack_a, t_stack **stack_b)
 {
-	printf("Stack A: ");
-	t_stack *current_a = *stack_a;
+	t_stack	*current_a;
+	t_stack	*current_b;
+
+	ft_printf("Stack A: ");
+	current_a = *stack_a;
 	while (current_a != NULL)
 	{
 		printf("%d ", current_a->data);
 		current_a = current_a->next;
 	}
-	printf("\n");
-	printf("Stack B: ");
-	t_stack *current_b = *stack_b;
+	ft_printf("\n");
+	ft_printf("Stack B: ");
+	current_b = *stack_b;
 	while (current_b != NULL)
 	{
-		printf("%d ", current_b->data);
+		ft_printf("%d ", current_b->data);
 		current_b = current_b->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }
 
 void	ft_free(t_stack **stack)
@@ -74,10 +77,7 @@ int	main(int argc, char **argv)
 	if (stack_sorted(a) != 1)
 	{
 		if (argc == 3)
-		{
-			sa(a);
-			ft_free(&a);
-		}
+			tiny_sort_two(a);
 		if (argc == 4)
 			tiny_sort_three(a);
 		if (argc == 5)

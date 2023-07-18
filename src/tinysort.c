@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tinysort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:35:21 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/18 18:07:54 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 22:47:36 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	tiny_sort_four(t_stack *a, t_stack *b)
 		sa(a);
 	while (b != NULL)
 		pa(&a, &b);
-	printer(&a, &b);
 	ft_free(&a);
 }
 

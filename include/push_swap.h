@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:17:57 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/18 18:05:58 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/18 22:53:20 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ enum
 long long		psatoi(char *str);
 void			sa(t_stack *stack_a);
 void			sb(t_stack *stack_b);
-void			ss(t_stack *stack_a, t_stack *stack_b);
 void			pa(t_stack **stack_a, t_stack **stack_b);
 void			pb(t_stack **stack_a, t_stack **stack_b);
 void			ra(t_stack **stack_a);
@@ -55,12 +54,13 @@ t_stack			*stack_index(t_stack *stack_a, int count);
 t_stack			*index_init(t_stack *stack_a);
 void			stack_init(t_stack **a, char **argv);
 int				stack_sorted(t_stack *stack);
+void			tiny_sort_two(t_stack *a);
 void			tiny_sort_three(t_stack *a);
 void			tiny_sort_four(t_stack *a, t_stack *b);
 void			tiny_sort_five(t_stack *a, t_stack *b);
 void			lstdelone(t_stack *lst, void (*del)(void *));
 void			lstclear(t_stack **lst, void (*del)(void *));
 void			ft_free(t_stack **stack);
-void 			printer(t_stack **stack_a, t_stack **stack_b);
+void			printer(t_stack **stack_a, t_stack **stack_b);
 
 #endif
