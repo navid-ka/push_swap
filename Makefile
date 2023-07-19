@@ -6,12 +6,12 @@
 #    By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/18 17:22:22 by nkeyani-         ###   ########.fr        #
+#    Updated: 2023/07/19 11:39:14 by nkeyani-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = $(BINDIR)/push_swap
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g -MMD
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
@@ -24,16 +24,21 @@ COLOR = $(shell tput setaf 2)
 KAOMOJI_SUCCESS = (づ ᴗ _ᴗ)づ♡
 KAOMOJI_REMOVE = (ノಠ益ಠ)ノ彡┻━┻
 
+OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
+DEPS = $(patsubst $(OBJDIR)/%.o,$(OBJDIR)/%.d,$(OBJECTS))
+
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@printf "$(COLOR)\rCompiling (╮°-°)╮┳━┳ : $(COLOR_RESET)$<"
 	@mkdir -p $(@D)
 	@gcc $(CFLAGS) -c $< -o $@
 
-${NAME}: ${OBJECTS}
+${NAME}: ${OBJECTS} include/push_swap.h
 	@mkdir -p $(@D)
 	@$(MAKE) -C include/libft
 	@gcc $(CFLAGS) -o ${NAME} ${OBJECTS} -Linclude/libft include/libft/bin/libft.a
 	@printf "\n$(COLOR)$(KAOMOJI_SUCCESS) Successfully compiled!$(COLOR_RESET)"
+
+-include $(DEPS)
 
 all: ${NAME}
 
