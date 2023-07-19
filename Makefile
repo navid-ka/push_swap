@@ -6,12 +6,12 @@
 #    By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 15:03:56 by nkeyani-          #+#    #+#              #
-#    Updated: 2023/07/19 11:39:14 by nkeyani-         ###   ########.fr        #
+#    Updated: 2023/07/19 16:36:05 by nkeyani-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = $(BINDIR)/push_swap
-CFLAGS = -Wall -Werror -Wextra -g -MMD
+CFLAGS = -Wall -Werror -Wextra -g -MMD -fsanitize=address
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
