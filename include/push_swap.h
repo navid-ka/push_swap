@@ -43,7 +43,6 @@ void			rra(t_stack **stack_a);
 void			swap(int *a, int *b);
 void			error_exit(void);
 int				error_syntax(char *str_nbr);
-int				ft_strcmp(const char *s1, const char *s2);
 void			lstadd_front(t_stack **lst, t_stack *new);
 int				lstsize(t_stack *lst);
 t_stack			*lstnew(int nbr);
